@@ -36,7 +36,7 @@ registerBlockType('__namespace__/__block__', {
     },
 
     save(props) {
-        const className = getBlockDefaultClassName('test/just-in-time-test-1');
+        const className = getBlockDefaultClassName('__namespace__/__block__');
         // const {  } = props.attributes;
 
         return (
