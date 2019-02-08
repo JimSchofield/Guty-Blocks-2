@@ -34,3 +34,6 @@ You will need to delete the block folder *and* remove the import statements from
 Sometimes there is a need to run a script on the viewing of a page.  The `build block with view script` sets up a `{blockname}.view.js` file that will only be run on the front end of the site.  Some use cases include:
 * When a block outputs carousel slide markup, and the view needs to pick up that markup and make it work.
 * If a block places stringified state on a div in the markup.  On viewing the page, the view script can pick up that state and render a live React application using ReactDOM and passing the state into the app as props.
+
+## Thanks
+Thanks to Robert a.k.a @codeBelt for creating `generate-template-files` which was a great way to set up block template generation!
