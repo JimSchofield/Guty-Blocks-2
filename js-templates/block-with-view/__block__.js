@@ -1,7 +1,10 @@
 import './__block__.view.scss';
 import './__block__.editor.scss';
 
-const { registerBlockType } = wp.blocks;
+const { 
+    registerBlockType,
+    getBlockDefaultClassName
+} = wp.blocks;
 
 const { InspectorControls } = wp.editor;
 
@@ -33,7 +36,7 @@ registerBlockType('__namespace__/__block__', {
     },
 
     save(props) {
-        const { className } = props;
+        const className = getBlockDefaultClassName('test/just-in-time-test-1');
         // const {  } = props.attributes;
 
         return (
