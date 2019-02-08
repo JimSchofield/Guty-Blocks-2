@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js --mode=development",
     "watch": "webpack --config webpack.config.js --mode=development --watch",
-    "new-block": "node ./generate-block.js",
+    "new-block": "node ./generate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jim Schofield",
