@@ -36,4 +36,4 @@ Sometimes there is a need to run a script on the viewing of a page.  The `build 
 * If a block places stringified state on a div in the markup.  On viewing the page, the view script can pick up that state and render a live React application using ReactDOM and passing the state into the app as props.
 
 ## Thanks
-Thanks to Robert a.k.a @codeBelt for creating `generate-template-files` which was a great way to set up block template generation!
+Thanks to Robert a.k.a [codeBelt](https://github.com/codeBelt) for creating [generate-template-files](https://github.com/codeBelt/generate-template-files) which was a great way to set up block template generation!
