@@ -33,7 +33,7 @@ registerBlockType('__namespace__/__block__', {
     },
 
     save(props) {
-        const { className } = props;
+        const className = getBlockDefaultClassName('__namespace__/__block__');
         // const {  } = props.attributes;
 
         return (
