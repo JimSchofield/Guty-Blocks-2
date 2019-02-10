@@ -90,10 +90,34 @@
 /*!*****************************!*\
   !*** ./assets/src/index.js ***!
   \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _just_in_time_test_1_just_in_time_test_1_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./just-in-time-test-1/just-in-time-test-1.js */ \"./assets/src/just-in-time-test-1/just-in-time-test-1.js\");\n\n\n//# sourceURL=webpack:///./assets/src/index.js?");
+
+/***/ }),
+
+/***/ "./assets/src/just-in-time-test-1/just-in-time-test-1.jit.scss":
+/*!*********************************************************************!*\
+  !*** ./assets/src/just-in-time-test-1/just-in-time-test-1.jit.scss ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./assets/src/index.js?");
+eval("module.exports = \".wp-block-test-just-in-time-test-1 {\\n  color: blue;\\n  padding: 2em;\\n  font-family: 'Avenir', sans-serif; }\\n\"\n\n//# sourceURL=webpack:///./assets/src/just-in-time-test-1/just-in-time-test-1.jit.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/just-in-time-test-1/just-in-time-test-1.js":
+/*!***************************************************************!*\
+  !*** ./assets/src/just-in-time-test-1/just-in-time-test-1.js ***!
+  \***************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _just_in_time_test_1_jit_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./just-in-time-test-1.jit.scss */ \"./assets/src/just-in-time-test-1/just-in-time-test-1.jit.scss\");\n/* harmony import */ var _just_in_time_test_1_jit_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_just_in_time_test_1_jit_scss__WEBPACK_IMPORTED_MODULE_0__);\n// import './just-in-time-test-1.view.scss';\n// import './just-in-time-test-1.editor.scss';\n\nvar _wp$blocks = wp.blocks,\n    registerBlockType = _wp$blocks.registerBlockType,\n    getBlockDefaultClassName = _wp$blocks.getBlockDefaultClassName;\nvar InspectorControls = wp.editor.InspectorControls;\nregisterBlockType('test/just-in-time-test-1', {\n  title: 'Just in time Test 1',\n  icon: 'cloud',\n  category: 'common',\n  attributes: {\n    styles: {\n      type: 'string'\n    }\n  },\n  edit: function edit(props) {\n    var className = props.className,\n        setAttributes = props.setAttributes;\n    var styles = props.attributes.styles;\n\n    function refreshStyleSheets() {\n      setAttributes({\n        styles: _just_in_time_test_1_jit_scss__WEBPACK_IMPORTED_MODULE_0___default.a\n      });\n    }\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, React.createElement(\"button\", {\n      onClick: refreshStyleSheets\n    }, \"Refresh style sheets\"))), React.createElement(React.Fragment, null, React.createElement(\"style\", null, styles), React.createElement(\"div\", {\n      className: className\n    }, \"Just in time Test 1\"))];\n  },\n  save: function save(props) {\n    var className = getBlockDefaultClassName('test/just-in-time-test-1');\n    var styles = props.attributes.styles;\n    return React.createElement(React.Fragment, null, React.createElement(\"style\", null, styles), React.createElement(\"div\", {\n      className: className\n    }, \"Just in time Test 1\"));\n  }\n});\n\n//# sourceURL=webpack:///./assets/src/just-in-time-test-1/just-in-time-test-1.js?");
 
 /***/ })
 

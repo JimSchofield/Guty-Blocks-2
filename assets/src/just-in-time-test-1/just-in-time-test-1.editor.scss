@@ -1,0 +1,9 @@
+/*
+* For styles only loaded in the editor
+* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.
+*/
+
+.wp-block-test-just-in-time-test-1 {
+    background: navy;
+    color: white;
+}

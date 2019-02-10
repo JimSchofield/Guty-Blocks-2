@@ -21,6 +21,14 @@ module.exports = [
                     loader: "babel-loader"
                 },
                 {
+                    test: /\.jit.scss$/,
+                    use: [
+                        path.resolve('tools/loader/load-css-as-string.js'),
+                        // "css-loader",
+                        "sass-loader",
+                    ]
+                },
+                {
                     test: /\.view.scss$/,
                     use: [
                         MiniCssExtractPlugin.loader,
