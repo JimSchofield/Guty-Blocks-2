@@ -94,30 +94,76 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _some_block_some_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./some-block/some-block.js */ \"./assets/src/some-block/some-block.js\");\n\n\n//# sourceURL=webpack:///./assets/src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _some_block_some_block_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./some-block/some-block.js */ \"./assets/src/some-block/some-block.js\");\n/* harmony import */ var _render_props_background_render_props_background_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render-props-background/render-props-background.js */ \"./assets/src/render-props-background/render-props-background.js\");\n\n\n\n//# sourceURL=webpack:///./assets/src/index.js?");
 
 /***/ }),
 
-/***/ "./assets/src/mixins/BackgroundWrapper.jsx":
-/*!*************************************************!*\
-  !*** ./assets/src/mixins/BackgroundWrapper.jsx ***!
-  \*************************************************/
+/***/ "./assets/src/mixins/BackgroundRenderProp/BackgroundRenderProp.jsx":
+/*!*************************************************************************!*\
+  !*** ./assets/src/mixins/BackgroundRenderProp/BackgroundRenderProp.jsx ***!
+  \*************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _BackgroundWrapper_view_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BackgroundWrapper.view.scss */ \"./assets/src/mixins/BackgroundWrapper.view.scss\");\n/* harmony import */ var _BackgroundWrapper_view_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_BackgroundWrapper_view_scss__WEBPACK_IMPORTED_MODULE_1__);\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\nvar InspectorControls = wp.editor.InspectorControls;\nvar ColorPicker = wp.components.ColorPicker;\n\nvar BackgroundWrapper = function BackgroundWrapper(blockConfig) {\n  var wrappedConfig = {\n    title: blockConfig.title,\n    icon: blockConfig.icon,\n    category: blockConfig.category,\n    attributes: _objectSpread({\n      backgroundColor: {\n        type: 'string'\n      }\n    }, blockConfig.attributes),\n    edit: function edit(props) {\n      var setAttributes = props.setAttributes;\n      var backgroundColor = props.attributes.backgroundColor;\n\n      function changeBackgroundColor(_ref) {\n        var rgb = _ref.rgb;\n        setAttributes({\n          backgroundColor: \"rgba(\".concat(rgb.r, \",\").concat(rgb.g, \",\").concat(rgb.b, \",\").concat(rgb.a)\n        });\n      }\n\n      return [React.createElement(InspectorControls, null, React.createElement(ColorPicker, {\n        color: backgroundColor,\n        onChangeComplete: function onChangeComplete(value) {\n          return changeBackgroundColor(value);\n        }\n      })), React.createElement(\"div\", {\n        className: \"backgroundWrapper\",\n        style: {\n          background: backgroundColor\n        }\n      }, blockConfig.edit(props))];\n    },\n    save: function save(props) {\n      var backgroundColor = props.attributes.backgroundColor;\n      return React.createElement(\"div\", {\n        className: \"backgroundWrapper\",\n        style: {\n          background: backgroundColor\n        }\n      }, blockConfig.save(props));\n    }\n  };\n  return wrappedConfig;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (BackgroundWrapper);\n\n//# sourceURL=webpack:///./assets/src/mixins/BackgroundWrapper.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nvar InspectorControls = wp.editor.InspectorControls;\nvar ColorPicker = wp.components.ColorPicker;\n\nvar BackgroundRenderProp = function BackgroundRenderProp(props) {\n  function changeToRGBA(_ref) {\n    var rgb = _ref.rgb;\n    return \"rgba(\".concat(rgb.r, \",\").concat(rgb.g, \",\").concat(rgb.b, \",\").concat(rgb.a, \")\");\n  }\n\n  return [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(InspectorControls, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ColorPicker, {\n    onChangeComplete: function onChangeComplete(value) {\n      return props.handleColorChange(changeToRGBA(value));\n    }\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    class: \"backgroundWrapper\",\n    style: {\n      background: props.backgroundColor\n    }\n  }, props.render())];\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (BackgroundRenderProp);\n\n//# sourceURL=webpack:///./assets/src/mixins/BackgroundRenderProp/BackgroundRenderProp.jsx?");
 
 /***/ }),
 
-/***/ "./assets/src/mixins/BackgroundWrapper.view.scss":
-/*!*******************************************************!*\
-  !*** ./assets/src/mixins/BackgroundWrapper.view.scss ***!
-  \*******************************************************/
+/***/ "./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.jsx":
+/*!*******************************************************************!*\
+  !*** ./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _BackgroundWrapper_view_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BackgroundWrapper.view.scss */ \"./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.view.scss\");\n/* harmony import */ var _BackgroundWrapper_view_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_BackgroundWrapper_view_scss__WEBPACK_IMPORTED_MODULE_1__);\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\n\nvar InspectorControls = wp.editor.InspectorControls;\nvar ColorPicker = wp.components.ColorPicker;\n\nvar BackgroundWrapper = function BackgroundWrapper(blockConfig) {\n  var wrappedConfig = {\n    title: blockConfig.title,\n    icon: blockConfig.icon,\n    category: blockConfig.category,\n    attributes: _objectSpread({\n      backgroundColor: {\n        type: 'string'\n      }\n    }, blockConfig.attributes),\n    edit: function edit(props) {\n      var setAttributes = props.setAttributes;\n      var backgroundColor = props.attributes.backgroundColor;\n\n      function changeBackgroundColor(_ref) {\n        var rgb = _ref.rgb;\n        setAttributes({\n          backgroundColor: \"rgba(\".concat(rgb.r, \",\").concat(rgb.g, \",\").concat(rgb.b, \",\").concat(rgb.a)\n        });\n      }\n\n      return [React.createElement(InspectorControls, null, React.createElement(ColorPicker, {\n        color: backgroundColor,\n        onChangeComplete: function onChangeComplete(value) {\n          return changeBackgroundColor(value);\n        }\n      })), React.createElement(\"div\", {\n        className: \"backgroundWrapper\",\n        style: {\n          background: backgroundColor\n        }\n      }, blockConfig.edit(props))];\n    },\n    save: function save(props) {\n      var backgroundColor = props.attributes.backgroundColor;\n      return React.createElement(\"div\", {\n        className: \"backgroundWrapper\",\n        style: {\n          background: backgroundColor\n        }\n      }, blockConfig.save(props));\n    }\n  };\n  return wrappedConfig;\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (BackgroundWrapper);\n\n//# sourceURL=webpack:///./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.jsx?");
+
+/***/ }),
+
+/***/ "./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.view.scss":
+/*!*************************************************************************!*\
+  !*** ./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.view.scss ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/mixins/BackgroundWrapper.view.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.view.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/render-props-background/render-props-background.editor.scss":
+/*!********************************************************************************!*\
+  !*** ./assets/src/render-props-background/render-props-background.editor.scss ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./render-props-background.editor.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/render-props-background/render-props-background.editor.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./assets/src/render-props-background/render-props-background.editor.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/render-props-background/render-props-background.js":
+/*!***********************************************************************!*\
+  !*** ./assets/src/render-props-background/render-props-background.js ***!
+  \***********************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _render_props_background_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./render-props-background.view.scss */ \"./assets/src/render-props-background/render-props-background.view.scss\");\n/* harmony import */ var _render_props_background_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_render_props_background_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _render_props_background_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./render-props-background.editor.scss */ \"./assets/src/render-props-background/render-props-background.editor.scss\");\n/* harmony import */ var _render_props_background_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_render_props_background_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _mixins_BackgroundRenderProp_BackgroundRenderProp_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mixins/BackgroundRenderProp/BackgroundRenderProp.jsx */ \"./assets/src/mixins/BackgroundRenderProp/BackgroundRenderProp.jsx\");\n\n\nvar registerBlockType = wp.blocks.registerBlockType;\nvar InspectorControls = wp.editor.InspectorControls;\n\nregisterBlockType('guty-blocks-2/render-props-background', {\n  title: 'Some other block!',\n  icon: 'smiley',\n  category: 'common',\n  attributes: {\n    backgroundColor: {\n      type: 'string',\n      default: null\n    }\n  },\n  edit: function edit(props) {\n    var className = props.className,\n        setAttributes = props.setAttributes;\n    var backgroundColor = props.attributes.backgroundColor;\n\n    function changeBackgroundColor(value) {\n      console.log(value);\n      setAttributes({\n        backgroundColor: value\n      });\n    }\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\")), React.createElement(_mixins_BackgroundRenderProp_BackgroundRenderProp_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n      backgroundColor: backgroundColor,\n      handleColorChange: function handleColorChange(value) {\n        return changeBackgroundColor(value);\n      },\n      render: function render() {\n        return React.createElement(\"div\", {\n          className: className\n        }, \"This block is including a background functionality that is using a render prop.\");\n      }\n    })];\n  },\n  save: function save(props) {\n    var backgroundColor = props.attributes.backgroundColor;\n    return React.createElement(_mixins_BackgroundRenderProp_BackgroundRenderProp_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n      render: function render() {\n        return React.createElement(\"div\", null, \"This block is including a background functionality that is using a render prop.\");\n      }\n    });\n  }\n});\n\n//# sourceURL=webpack:///./assets/src/render-props-background/render-props-background.js?");
+
+/***/ }),
+
+/***/ "./assets/src/render-props-background/render-props-background.view.scss":
+/*!******************************************************************************!*\
+  !*** ./assets/src/render-props-background/render-props-background.view.scss ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/render-props-background/render-props-background.view.scss?");
 
 /***/ }),
 
@@ -140,7 +186,7 @@ eval("\nvar content = __webpack_require__(/*! !../../../node_modules/css-loader/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _some_block_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./some-block.view.scss */ \"./assets/src/some-block/some-block.view.scss\");\n/* harmony import */ var _some_block_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_some_block_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _some_block_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./some-block.editor.scss */ \"./assets/src/some-block/some-block.editor.scss\");\n/* harmony import */ var _some_block_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_some_block_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _mixins_BackgroundWrapper_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mixins/BackgroundWrapper.jsx */ \"./assets/src/mixins/BackgroundWrapper.jsx\");\n\n\n\nvar _wp$blocks = wp.blocks,\n    registerBlockType = _wp$blocks.registerBlockType,\n    getBlockDefaultClassName = _wp$blocks.getBlockDefaultClassName;\nvar InspectorControls = wp.editor.InspectorControls;\nvar config = {\n  title: 'This is some test block',\n  icon: 'format-aside',\n  category: 'common',\n  attributes: {},\n  edit: function edit(props) {\n    var className = props.className,\n        setAttributes = props.setAttributes; // const {  } = props.attributes;\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\")), React.createElement(\"div\", {\n      className: className\n    }, \"This is some test block\")];\n  },\n  save: function save(props) {\n    // const className = getBlockDefaultClassName('guty-blocks-2/some-block');\n    // const { } = props.attributes;\n    return React.createElement(\"div\", null, \"This is some test block\");\n  }\n};\nregisterBlockType('guty-blocks-2/some-block', Object(_mixins_BackgroundWrapper_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(config));\n\n//# sourceURL=webpack:///./assets/src/some-block/some-block.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _some_block_view_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./some-block.view.scss */ \"./assets/src/some-block/some-block.view.scss\");\n/* harmony import */ var _some_block_view_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_some_block_view_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _some_block_editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./some-block.editor.scss */ \"./assets/src/some-block/some-block.editor.scss\");\n/* harmony import */ var _some_block_editor_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_some_block_editor_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _mixins_BackgroundWrapper_BackgroundWrapper_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mixins/BackgroundWrapper/BackgroundWrapper.jsx */ \"./assets/src/mixins/BackgroundWrapper/BackgroundWrapper.jsx\");\n\n\n\nvar _wp$blocks = wp.blocks,\n    registerBlockType = _wp$blocks.registerBlockType,\n    getBlockDefaultClassName = _wp$blocks.getBlockDefaultClassName;\nvar InspectorControls = wp.editor.InspectorControls;\nvar config = {\n  title: 'This is some test block',\n  icon: 'format-aside',\n  category: 'common',\n  attributes: {},\n  edit: function edit(props) {\n    var className = props.className,\n        setAttributes = props.setAttributes; // const {  } = props.attributes;\n\n    return [React.createElement(InspectorControls, null, React.createElement(\"div\", {\n      style: {\n        padding: '1em 0'\n      }\n    }, \"Options\")), React.createElement(\"div\", {\n      className: className\n    }, \"This block is using a \\\"Higher Order Block\\\" to include a background color change functionality.\")];\n  },\n  save: function save(props) {\n    // const className = getBlockDefaultClassName('guty-blocks-2/some-block');\n    // const { } = props.attributes;\n    return React.createElement(\"div\", null, \"This block is using a \\\"Higher Order Block\\\" to include a background color change functionality.\");\n  }\n};\nregisterBlockType('guty-blocks-2/some-block', Object(_mixins_BackgroundWrapper_BackgroundWrapper_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(config));\n\n//# sourceURL=webpack:///./assets/src/some-block/some-block.js?");
 
 /***/ }),
 
@@ -152,6 +198,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _som
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/src/some-block/some-block.view.scss?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/render-props-background/render-props-background.editor.scss":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./assets/src/render-props-background/render-props-background.editor.scss ***!
+  \***************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"/*\\n* For styles only loaded in the editor\\n* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.\\n*/\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./assets/src/render-props-background/render-props-background.editor.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 

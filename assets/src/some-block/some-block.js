@@ -1,7 +1,7 @@
 import './some-block.view.scss';
 import './some-block.editor.scss';
 
-import BackgroundWrapper from '../mixins/BackgroundWrapper.jsx';
+import BackgroundWrapper from '../mixins/BackgroundWrapper/BackgroundWrapper.jsx';
 
 const { 
     registerBlockType,
@@ -15,7 +15,7 @@ const config = {
     icon: 'format-aside',
     category: 'common',
 
-    attributes: { },
+    attributes: {  },
 
     edit(props) {
         const { className, setAttributes } = props;
@@ -32,7 +32,7 @@ const config = {
                 </div>
             </InspectorControls>,
             <div className={className}>
-                This is some test block
+                This block is using a "Higher Order Block" to include a background color change functionality.
             </div>
         ];
     },
@@ -43,7 +43,7 @@ const config = {
 
         return (
             <div>
-                This is some test block
+                This block is using a "Higher Order Block" to include a background color change functionality.
             </div>
         );
     },
