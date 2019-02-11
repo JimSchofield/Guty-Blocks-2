@@ -1,7 +1,10 @@
 import './__block__.view.scss';
 import './__block__.editor.scss';
 
-const { registerBlockType } = wp.blocks;
+const {
+    registerBlockType,
+    getBlockDefaultClassName
+} = wp.blocks;
 
 const { InspectorControls } = wp.editor;
 
