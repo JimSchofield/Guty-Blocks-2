@@ -1,5 +1,5 @@
-import './some-block.view.scss';
-import './some-block.editor.scss';
+import './background-wrapper-block.view.scss';
+import './background-wrapper-block.editor.scss';
 
 import BackgroundWrapper from '../mixins/BackgroundWrapper/BackgroundWrapper.jsx';
 
@@ -10,8 +10,14 @@ const {
 
 const { InspectorControls } = wp.editor;
 
+// Everything is normal up to HERE.
+// instead of making an object literal, we define
+// the object as "config". Later on we pas this object
+// through our "backgroundWrapper" function before 
+// we register it
 const config = {
-    title: 'This is some test block',
+    // Normal block stuff in here!
+    title: 'Background Wrapper Block',
     icon: 'format-aside',
     category: 'common',
 
@@ -19,15 +25,10 @@ const config = {
 
     edit(props) {
         const { className, setAttributes } = props;
-        // const {  } = props.attributes;
 
         return [
             <InspectorControls>
-                <div
-                    style={{
-                        padding: '1em 0',
-                    }}
-                >
+                <div style={{padding: '1em 0'}}>
                     Options
                 </div>
             </InspectorControls>,
@@ -38,9 +39,6 @@ const config = {
     },
 
     save(props) {
-        // const className = getBlockDefaultClassName('guty-blocks-2/some-block');
-        // const { } = props.attributes;
-
         return (
             <div>
                 This block is using a "Higher Order Block" to include a background color change functionality.
@@ -49,4 +47,5 @@ const config = {
     },
 };
 
-registerBlockType('guty-blocks-2/some-block', BackgroundWrapper(config));
+// Notice we wrap the object with the function before we register it!
+registerBlockType('guty-blocks-2/background-wrapper-block', BackgroundWrapper(config));
