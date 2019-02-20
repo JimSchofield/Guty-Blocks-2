@@ -1,4 +1,28 @@
-.wp-block-guty-blocks-2-hello-world {
-  background: #000;
-  color: white; }
+.wp-block-guty-media-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5em;
+  font-family: 'Avenir', 'Helvetica', sans-serif;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3); }
+  @media screen and (min-width: 376px) {
+    .wp-block-guty-media-block {
+      flex-direction: row; } }
+  .wp-block-guty-media-block .media {
+    flex-shrink: 0;
+    width: 100%;
+    margin: 0 0 1em 0; }
+    @media screen and (min-width: 376px) {
+      .wp-block-guty-media-block .media {
+        width: 35%;
+        margin: 0 1em 0 0; } }
+    .wp-block-guty-media-block .media img {
+      display: block;
+      width: 100%; }
+  .wp-block-guty-media-block .copy .copy-hd {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0 0 22px 0; }
+    .wp-block-guty-media-block .copy .copy-hd:before {
+      display: none; }
 

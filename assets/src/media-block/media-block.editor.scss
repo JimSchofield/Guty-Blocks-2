@@ -1,0 +1,35 @@
+/*
+* For styles only loaded in the editor
+* These styles are actually inlined using webpack style-loader.  They are not loaded using WordPress enqueuing.
+*/
+.wp-block-guty-media-block {
+    .media:hover,
+    .media:focus {
+        cursor: pointer;
+
+        // this psuedo element trick allows us to overlay a border
+        // that will not affect the size of the image or the media
+        // div
+        &:after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 4px solid lightgreen;
+            pointer-events: none;
+        }
+    }
+
+    .media {
+        position: relative;
+
+        // we need to make the button invisible
+        button {
+            border: none;
+            padding: 0;
+            display: block;
+        }
+    }
+}
