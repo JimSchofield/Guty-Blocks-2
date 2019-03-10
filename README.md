@@ -31,9 +31,16 @@ You will need to delete the block folder *and* remove the import statements from
 * React and ReactDOM are treated as external dependencies, meaning that they can be referenced in webpack builds, but are not actually included in the index.js build.  This is so we don't duplicate React when we run the blocks.  As a result file sizes for these built blocks are much smaller.
 
 ## Block with view script
-Sometimes there is a need to run a script on the viewing of a page.  The `build block with view script` sets up a `{blockname}.view.js` file that will only be run on the front end of the site.  Some use cases include:
-* When a block outputs carousel slide markup, and the view needs to pick up that markup and make it work.
-* If a block places stringified state on a div in the markup.  On viewing the page, the view script can pick up that state and render a live React application using ReactDOM and passing the state into the app as props.
+Sometimes there is a need to run a script on the viewing of a page.  The `build block with view script` sets up a `{blockname}.view.js` file that will only be run on the front end of the site.  Note that this only provides a place to run scripts that will run in the view, and the actual searching of the dom and attaching functionality is completely written by you.
+
+## Updates
+
+### March 10, 2019
+- Include RichText
+- Include support for align
+- Don't include default styles ins css and don't include css className in edit or view
+- Updated readme regarding view blocks
+- Adding generate-template-files (? not sure why it wasn't installing before?)
 
 ## Thanks
 Thanks to Robert a.k.a [codeBelt](https://github.com/codeBelt) for creating [generate-template-files](https://github.com/codeBelt/generate-template-files) which was a great way to set up block template generation!
