@@ -35,7 +35,7 @@ Sometimes there is a need to run a script on the viewing of a page.  The `build 
 
 ## Updates
 
-## April 1, 2019
+### April 1, 2019
 - Removed some erroneous lines in `index.js` and `index.view.js` that were causing build errors
 
 ### March 10, 2019
