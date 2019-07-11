@@ -23,6 +23,9 @@ This is designed to be a minimal, fast build environment for making WordPress Gu
 ## Deleting a block
 You will need to delete the block folder *and* remove the import statements from index.js (and index.view.js if it included a view script).
 
+## Production build
+Running `npm run build:prod` will build files as usual but will include js minification.  A todo item for me is to include CSS minification as well.
+
 ## Setup details
 * Instead of creating a php enqueuing  function for each individual block, we import individual blocks into one `index.js` file and one `style.css` file.
 

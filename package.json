@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js --mode=development",
     "watch": "webpack --config webpack.config.js --mode=development --watch",
-    "build:prod": "webpack --config webpack.config.js --mode=production --watch",
+    "build:prod": "webpack --config webpack.config.js --mode=production",
     "new-block": "node ./generate.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
