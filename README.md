@@ -35,6 +35,10 @@ Sometimes there is a need to run a script on the viewing of a page.  The `build 
 
 ## Updates
 
+### July 11, 2019
+- Fixed lodash dependency issue
+- Added `npm run build:prod` to allow for js minification if desired
+
 ### April 1, 2019
 - Removed some erroneous lines in `index.js` and `index.view.js` that were causing build errors
 
